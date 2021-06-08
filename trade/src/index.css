@@ -1,13 +1,14 @@
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background: #e0e0e0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.Header {
+  background-color: #B6D6C0;
+  color: gray;
+  font: 11px/1.33 Verdana,sans-serif;
+}
+
+.Nav {
+  background-color: #DDF2F3;
 }
