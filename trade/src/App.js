@@ -1,8 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-import Login from './Login';
-import Header from './Header';
-import Nav from './Nav';
+import Login from './components/Login';
+import Header from './components/Header';
+import Nav from './components/Nav';
 
  
 

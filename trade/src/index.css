@@ -3,12 +3,39 @@ body {
   background: #e0e0e0;
 }
 
+.App {
+  display: grid;
+  grid-template-columns: 2fr 12fr;
+  
+  grid-template-areas: "H H" 
+                       "N L";  
+  background-color: #ECF7EF;
+
+}
+
 .Header {
+  grid-area: H;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "I I I I";
+  min-height: 50px;
   background-color: #B6D6C0;
   color: gray;
   font: 11px/1.33 Verdana,sans-serif;
 }
 
 .Nav {
+  grid-area: N;
   background-color: #DDF2F3;
+  color: gray;
+  font: 11px/1.33 Verdana,sans-serif;
+}
+
+.Login {
+  grid-area: L;
+  min-height: 500px;
+}
+
+.menuItem {
+  background-color: bisque;  
 }
