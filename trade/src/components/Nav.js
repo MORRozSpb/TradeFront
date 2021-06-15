@@ -1,7 +1,9 @@
 function Nav() {
     return (
         <div className = 'Nav'>
-            <h3> Navigation</h3>
+            <div className = 'NavItem'> Stocks</div>
+            <div className = 'NavItem'> Products</div>
+            <div className = 'NavItem'> Partners</div>
         </div>
     )
 }

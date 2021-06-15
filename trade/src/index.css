@@ -5,7 +5,7 @@ body {
 
 .App {
   display: grid;
-  grid-template-columns: 2fr 12fr;
+  grid-template-columns: 1fr 11fr;
   
   grid-template-areas: "H H" 
                        "N L";  
@@ -16,12 +16,13 @@ body {
 .Header {
   grid-area: H;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-areas: "I I I I";
+  grid-template-columns: 1fr 2fr 2fr 2fr 2fr;
+  grid-template-areas: "I I I I I";
   min-height: 50px;
-  background-color: #B6D6C0;
+  background-color: bisque;
   color: gray;
-  font: 11px/1.33 Verdana,sans-serif;
+  font: 18px/1.33 Verdana,sans-serif;
+  -webkit-user-select: none;
 }
 
 .Nav {
@@ -29,13 +30,41 @@ body {
   background-color: #DDF2F3;
   color: gray;
   font: 11px/1.33 Verdana,sans-serif;
+  -webkit-user-select: none;
 }
 
 .Login {
   grid-area: L;
-  min-height: 500px;
+  min-height: 700px;
+  justify-self: center;
+}
+
+.popup_login {
+  width: 500px;
+  display: inline-grid;
+  margin-top: 100px;
+  padding: 30px;
+  background-color: lightcyan;
+}
+
+.form-label {
+  color: cadetblue;
 }
 
 .menuItem {
   background-color: bisque;  
+  align-self: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.menuItem:hover {
+  color: black;
+}
+
+.NavItem {
+  font-size: large;
+  margin-top: 50px;
+  text-align: left;
+  margin-left: 30px;
 }
