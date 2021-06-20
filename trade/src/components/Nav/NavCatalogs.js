@@ -1,6 +1,6 @@
-function Nav() {
+function NavCatalogs() {
     return (
-        <div className = 'Nav'>
+        <div className = 'NavCatalogs'>
             <div className = 'NavItem'> Stocks</div>
             <div className = 'NavItem'> Products</div>
             <div className = 'NavItem'> Partners</div>
@@ -8,4 +8,4 @@ function Nav() {
     )
 }
 
-export default Nav;
+export default NavCatalogs;

@@ -25,6 +25,22 @@ body {
   -webkit-user-select: none;
 }
 
+a {
+  color: gray;
+  font: 18px/1.33 Verdana,sans-serif;
+  text-decoration: none;
+  -webkit-user-select: none;
+}
+
+a.active {
+  color: black;
+}
+
+a:hover {
+  text-decoration: wavy;
+  color: black;
+}
+
 .Nav {
   grid-area: N;
   background-color: #DDF2F3;
