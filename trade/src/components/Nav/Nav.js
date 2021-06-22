@@ -1,7 +1,7 @@
 import NavCatalogs from './NavCatalogs';
 import NavDocuments from './NavDocuments';
 import NavReports from './NavReports';
-import {BrowserRouter, Route} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 
 function Nav() {
     return (

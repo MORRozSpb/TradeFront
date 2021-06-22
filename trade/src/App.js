@@ -1,9 +1,9 @@
 // import logo from './logo.svg';
-import './App.css';
-import Login from './components/Login';
+ 
+import Login from './components/Login/Login';
 import Header from './components/Header/Header';
 import Nav from './components/Nav/Nav';
-import {BrowserRouter, Route} from 'react-router-dom';
+import {BrowserRouter} from 'react-router-dom';
 
 
 function App() {
