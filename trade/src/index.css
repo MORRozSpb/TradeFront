@@ -55,6 +55,16 @@ a:hover {
   justify-self: center;
 }
 
+.success {
+  font-size: .875em;
+  color: #198754;
+}
+
+.noSuccess {
+  font-size: .875em;
+  color: red;
+}
+
 .popup_login {
   width: 500px;
   display: inline-grid;

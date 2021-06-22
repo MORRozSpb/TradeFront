@@ -4,10 +4,12 @@ class Login extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {value: 'a'};
+        this.state = {login: 'admin',
+                      password: ''};
 
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChangeLogin    = this.handleChangeLogin.bind(this);
+        this.handleChangePassword = this.handleChangePassword.bind(this);
+        this.handleSubmit         = this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
@@ -15,14 +17,20 @@ class Login extends React.Component {
     }
 
     handleSubmit(event) {
-        alert(`Login is ${this.state.value}`);
+        // alert(`Login is ${this.state.login} pass is ${this.state.password}`);
         event.preventDefault();
         event.stopPropagation();
+        authorize(this.state);
     }
 
-    handleChange(e) {
+    handleChangeLogin(e) {
       
-        this.setState({value: e.target.value});
+        this.setState({login: e.target.value});
+    }
+
+    handleChangePassword(e) {
+      
+        this.setState({password: e.target.value});
     }
 
     render() {
@@ -31,18 +39,18 @@ class Login extends React.Component {
                 <form className="popup_login needs-validation" noValidate onSubmit = {this.handleSubmit} id='modal'>
                     <div className='mb-3'>
                         <label htmlFor='login' className='form-label'>login</label>
-                        <input type='login' className='form-control' id='login' value = {this.state.value} onChange = {this.handleChange} required></input>
+                        <input type='login' className='form-control' id='login' value = {this.state.login} onChange = {this.handleChangeLogin} required></input>
                     </div>
                     <div className='mb-3'>
                         <label htmlFor='password' className='form-label'>password</label>
-                        <input type='password' className='form-control' id='password' required></input>
+                        <input type='password' className='form-control' id='password' value = {this.state.password} onChange = {this.handleChangePassword} required></input>
                     </div>
 
                     <button className="btn btn-outline-info" type='submit'>Login</button>
 
-                    <div className="valid-feedback">
-                        
-                     </div>
+                    <div className="status" id = 'status'>
+                        <p id = 'error'></p>    
+                    </div>
                 </form>
             </div>
         );
@@ -75,17 +83,32 @@ function disableDefaultFormValidation() {
 
 function readData(data) {
 
+    var status = document.getElementById('status');
+    var error = document.getElementById('error');
+
     console.log((data));
+
+    if (data.status === '403') {
+        console.log(`error 403`);
+        error.innerHTML = '403';
+        status.classList.add('noSuccess');
+    } else {
+        console.log(`200`);
+        error.innerHTML = 'success';
+        status.classList.add('success');   
+        localStorage.setItem('token', data.token);
+    }
+  
 
 }
 
-function authorize() {
+function authorize(formData) {
 
     const adress = 'http://93.100.213.197:9090/api/v1/auth/login';
 
     var bodyCreds = {
-        "login": "admin",
-        "password": "123!!!123"
+        "login": formData.login,
+        "password": formData.password
     };
 
     var obj = {
