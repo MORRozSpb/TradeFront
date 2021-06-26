@@ -16,7 +16,7 @@ body {
 .Header {
   grid-area: H;
   display: grid;
-  grid-template-columns: 1fr 2fr 2fr 2fr 2fr;
+  grid-template-columns: 1fr 2fr 2fr 2fr 2fr 2fr;
   grid-template-areas: "I I I I I";
   min-height: 50px;
   background-color: bisque;
@@ -43,6 +43,7 @@ a:hover {
 
 .Nav {
   grid-area: N;
+  min-width: 140px;
   background-color: #DDF2F3;
   color: gray;
   font: 11px/1.33 Verdana,sans-serif;
@@ -51,6 +52,11 @@ a:hover {
 
 .Login {
   grid-area: L;
+  min-height: 700px;
+  justify-self: center;
+}
+
+.Main {
   min-height: 700px;
   justify-self: center;
 }
@@ -94,3 +100,18 @@ a:hover {
   text-align: left;
   margin-left: 30px;
 }
+
+h2 {
+  text-align: center;
+  margin: 30px;
+  color: black;
+   
+}
+
+td {
+  min-width: 200px;
+  /* text-align: center; */
+  margin: 20px;
+  padding: 20px;
+}
+
